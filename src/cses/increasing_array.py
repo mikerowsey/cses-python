@@ -1,19 +1,18 @@
-def solve(n: int, array: list[int]):
-    result = 0
-    for i in range(1, n):
-        if array[i] >= array[i - 1]:
-            continue
-        diff = array[i - 1] - array[i]
-        result += diff
-        array[i] += diff
-    return result
+import sys
 
+it = iter(sys.stdin.buffer.read().split())
+ni = lambda: int(next(it))
 
-def main():
-    n = int(input())
-    array = list(map(int, input().split()))
-    print(solve(n, array))
+length = ni()
+previous = ni()
+moves = 0
 
+for _ in range(length - 1):
+    current = ni()
 
-if __name__ == "__main__":
-    main()
+    if current < previous:
+        moves += previous - current
+    else:
+        previous = current
+
+sys.stdout.write(str(moves))
