@@ -15,4 +15,4 @@ for _ in range(length - 1):
     else:
         previous = current
 
-sys.stdout.write(str(moves))
+print(moves)

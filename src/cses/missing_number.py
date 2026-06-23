@@ -1,16 +1,10 @@
-def solve(n: int, numbers: list[int]) -> int:
-    expected_sum = n * (n + 1) // 2
-    actual_sum = sum(numbers)
+import sys
 
-    return expected_sum - actual_sum
+it = iter(sys.stdin.buffer.read().split())
+ni = lambda: int(next(it))
 
+n = ni()
+expected_sum = n * (n + 1) // 2
+actual_sum = sum(map(int, it))
 
-def main() -> None:
-    n = int(input())
-    numbers = list(map(int, input().split()))
-
-    print(solve(n, numbers))
-
-
-if __name__ == "__main__":
-    main()
+print(expected_sum - actual_sum)
