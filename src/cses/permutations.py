@@ -1,24 +1,22 @@
-def solve(n: int) -> str:
-    if n == 1:
-        return "1"
-    if n == 2 or n == 3:
-        return "NO SOLUTION"
+import sys
 
-    result: list[str] = []
+it = iter(sys.stdin.buffer.read().split())
+n = int(next(it))
 
-    for i in range(2, n + 1, 2):
-        result.append(str(i))
+if n == 1:
+    print("1")
+    exit(0)
 
-    for i in range(1, n + 1, 2):
-        result.append(str(i))
+if n == 2 or n == 3:
+    print("NO SOLUTION")
+    exit(0)
 
-    return " ".join(result)
+result: list[str] = []
 
+for i in range(2, n + 1, 2):
+    result.append(str(i))
 
-def main():
-    n = int(input())
-    print(solve(n))
+for i in range(1, n + 1, 2):
+    result.append(str(i))
 
-
-if __name__ == '__main__':
-    main()
+sys.stdout.write(" ".join(result))
