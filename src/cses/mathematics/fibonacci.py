@@ -3,16 +3,15 @@ import sys
 MOD = 1_000_000_007
 
 
-def ni(it) -> int:
-    return int(next(it))
+def solve(it) -> str:
+    n = ni(it)
+    if n == 0:
+        return "0"
 
+    t = (0, 1, 1, 1)
+    t = mpow(t, n - 1)
 
-def nil(it, n: int) -> list[int]:
-    return [ni(it) for _ in range(n)]
-
-
-def ns(it) -> str:
-    return next(it).decode()
+    return str(t[3])
 
 
 def mul(a, b):
@@ -37,15 +36,16 @@ def mpow(a, n):
     return result
 
 
-def solve(it) -> str:
-    n = ni(it)
-    if n == 0:
-        return "0"
+def ni(it) -> int:
+    return int(next(it))
 
-    t = (0, 1, 1, 1)
-    t = mpow(t, n - 1)
 
-    return str(t[3])
+def nil(it, n: int) -> list[int]:
+    return [ni(it) for _ in range(n)]
+
+
+def ns(it) -> str:
+    return next(it).decode()
 
 
 def main() -> None:
