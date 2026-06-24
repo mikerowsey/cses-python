@@ -1,18 +1,38 @@
 import sys
 
-it = iter(sys.stdin.buffer.read().split())
-ni = lambda: int(next(it))
 
-length = ni()
-previous = ni()
-moves = 0
+def ni(it) -> int:
+    return int(next(it))
 
-for _ in range(length - 1):
-    current = ni()
 
-    if current < previous:
-        moves += previous - current
-    else:
-        previous = current
+def nil(it, n: int) -> list[int]:
+    return [ni(it) for _ in range(n)]
 
-print(moves)
+
+def ns(it) -> str:
+    return next(it).decode()
+
+
+def solve(it) -> str:
+    length = ni(it)
+    previous = ni(it)
+    moves = 0
+
+    for _ in range(length - 1):
+        current = ni(it)
+
+        if current < previous:
+            moves += previous - current
+        else:
+            previous = current
+
+    return str(moves)
+
+
+def main() -> None:
+    it = iter(sys.stdin.buffer.read().split())
+    sys.stdout.write(solve(it) + "\n")
+
+
+if __name__ == "__main__":
+    main()
