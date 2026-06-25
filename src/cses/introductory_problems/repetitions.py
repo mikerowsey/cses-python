@@ -1,18 +1,6 @@
 import sys
 
 
-def ni(it) -> int:
-    return int(next(it))
-
-
-def nil(it, n: int) -> list[int]:
-    return [ni(it) for _ in range(n)]
-
-
-def ns(it) -> str:
-    return next(it).decode()
-
-
 def solve(it) -> str:
     s = ns(it)
     current = s[0]
@@ -28,6 +16,18 @@ def solve(it) -> str:
         current = next_val
 
     return str(reps)
+
+
+def ni(it) -> int:
+    return int(next(it))
+
+
+def nil(it, n: int) -> list[int]:
+    return [ni(it) for _ in range(n)]
+
+
+def ns(it) -> str:
+    return next(it).decode()
 
 
 def main() -> None:

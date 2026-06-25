@@ -1,23 +1,11 @@
 import sys
 
 
-def ni(it) -> int:
-    return int(next(it))
-
-
-def nil(it, n: int) -> list[int]:
-    return [ni(it) for _ in range(n)]
-
-
-def ns(it) -> str:
-    return next(it).decode()
-
-
 def solve(it) -> str:
     n = ni(it)
 
     if n == 1:
-       return "1"
+        return "1"
 
     if n == 2 or n == 3:
         return "NO SOLUTION"
@@ -31,6 +19,18 @@ def solve(it) -> str:
         result.append(str(i))
 
     return " ".join(result)
+
+
+def ni(it) -> int:
+    return int(next(it))
+
+
+def nil(it, n: int) -> list[int]:
+    return [ni(it) for _ in range(n)]
+
+
+def ns(it) -> str:
+    return next(it).decode()
 
 
 def main() -> None:

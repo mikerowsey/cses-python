@@ -1,18 +1,6 @@
 import sys
 
 
-def ni(it) -> int:
-    return int(next(it))
-
-
-def nil(it, n: int) -> list[int]:
-    return [ni(it) for _ in range(n)]
-
-
-def ns(it) -> str:
-    return next(it).decode()
-
-
 def solve(it) -> str:
     s = ns(it)
 
@@ -39,6 +27,18 @@ def solve(it) -> str:
 
     left = "".join(left)
     return left + middle + left[::-1]
+
+
+def ni(it) -> int:
+    return int(next(it))
+
+
+def nil(it, n: int) -> list[int]:
+    return [ni(it) for _ in range(n)]
+
+
+def ns(it) -> str:
+    return next(it).decode()
 
 
 def main() -> None:

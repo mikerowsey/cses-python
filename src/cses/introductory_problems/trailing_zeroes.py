@@ -1,6 +1,15 @@
 import sys
 
 
+def solve(it) -> str:
+    n = ni(it)
+    result = 0
+    while n:
+        n //= 5
+        result += n
+    return str(result)
+
+
 def ni(it) -> int:
     return int(next(it))
 
@@ -11,15 +20,6 @@ def nil(it, n: int) -> list[int]:
 
 def ns(it) -> str:
     return next(it).decode()
-
-
-def solve(it) -> str:
-    n = ni(it)
-    result = 0
-    while n:
-        n //= 5
-        result += n
-    return str(result)
 
 
 def main() -> None:

@@ -1,6 +1,13 @@
 import sys
 
 
+def solve(it) -> str:
+    n = ni(it)
+    expected_sum = n * (n + 1) // 2
+    actual_sum = sum(map(int, it))
+    return str(expected_sum - actual_sum)
+
+
 def ni(it) -> int:
     return int(next(it))
 
@@ -11,13 +18,6 @@ def nil(it, n: int) -> list[int]:
 
 def ns(it) -> str:
     return next(it).decode()
-
-
-def solve(it) -> str:
-    n = ni(it)
-    expected_sum = n * (n + 1) // 2
-    actual_sum = sum(map(int, it))
-    return str(expected_sum - actual_sum)
 
 
 def main() -> None:
