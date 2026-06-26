@@ -1,3 +1,12 @@
+# Pattern: Permutation Generation
+# Technique: Brute-force enumeration with duplicate removal
+# Time: O(n! × n)
+# Space: O(n! × n)
+# Insight:    Generate every possible permutation, remove duplicates using a set, then sort
+#             the unique strings before output. This is feasible because n ≤ 8, making the
+#             maximum number of permutations (8! = 40,320) small enough to enumerate. Performs
+#             well for CSES.
+
 import itertools
 import sys
 

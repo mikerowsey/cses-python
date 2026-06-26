@@ -1,3 +1,13 @@
+# Pattern: Mathematical Invariants
+# Technique: Constant-time feasibility check
+# Time: O(t)
+# Space: O(1) (excluding output)
+# Insight:    Each move removes exactly three coins (2 from one pile, 1 from the other),
+#             so the total number of coins must be divisible by 3. Additionally, neither
+#             pile can ever contain more than twice as many coins as the other, or the
+#             smaller pile would be exhausted before the larger one.
+
+
 import sys
 
 

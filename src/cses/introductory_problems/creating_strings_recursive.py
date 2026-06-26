@@ -1,3 +1,12 @@
+# Pattern: Backtracking
+# Technique: DFS with frequency counts (pruning duplicates)
+# Time: O(U × n)
+# Space: O(U × n) (including output)
+# Insight:    Maintain a frequency count for each character and recursively build the string.
+#             Each recursive call chooses only from characters that still have remaining
+#             copies, guaranteeing that every unique permutation is generated exactly once.
+#             This avoids producing duplicate permutations and eliminates the need for a set.
+
 from collections import Counter
 import sys
 

@@ -1,3 +1,11 @@
+# Pattern: Modular Arithmetic
+# Technique: Built-in modular exponentiation (pow(base, exp, mod))
+# Time: O(log n)
+# Space: O(1)
+# Insight: Python's three-argument pow() performs exponentiation by
+#          squaring and applies the modulus during computation, avoiding
+#          huge intermediate integers.
+
 import sys
 
 
