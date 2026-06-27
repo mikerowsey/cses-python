@@ -1,3 +1,11 @@
+# Pattern: Constructive Algorithm
+# Technique: Even-odd partitioning
+# Time: O(n)
+# Space: O(n)
+# Insight: Place all even numbers first, then all odd numbers. This
+#          guarantees adjacent values differ by at least 2 for all
+#          n ≥ 4, producing a valid permutation without backtracking.
+
 import sys
 
 

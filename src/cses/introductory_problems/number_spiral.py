@@ -1,3 +1,12 @@
+# Pattern: Mathematical Observation
+# Technique: Layer-based coordinate mapping
+# Time: O(t)
+# Space: O(1)
+# Insight: Each coordinate belongs to a square "layer" whose maximum
+#          value is layer². Determine the layer, then compute the value
+#          by offsetting from the appropriate corner based on the layer's
+#          parity and the cell's position.
+
 import sys
 
 

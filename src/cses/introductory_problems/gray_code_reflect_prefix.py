@@ -1,3 +1,11 @@
+# Pattern: Constructive Algorithm
+# Technique: Reflect-and-prefix generation
+# Time: O(n · 2ⁿ)
+# Space: O(2ⁿ)
+# Insight: Generate Gray codes iteratively by reflecting the previous
+#          sequence. Prefix '0' to the original order and '1' to the
+#          reversed order, ensuring adjacent codes differ by one bit.
+
 import sys
 
 
@@ -8,9 +16,11 @@ def solve(it) -> str:
     for i in range(1, n):
         b = []
         for e in a:
-            b.append('0' + e)
+            s = '0' + e
+            b.append(s)
         for e in reversed(a):
-            b.append('1' + e)
+            s = '1' + e
+            b.append(s)
         a = b
 
     return "\n".join(a)

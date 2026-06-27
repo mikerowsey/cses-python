@@ -1,19 +1,28 @@
+# Pattern: Recursion
+# Technique: Divide and conquer
+# Time: O(2ⁿ)
+# Space: O(n)
+# Insight: Move the top n-1 disks to the auxiliary peg, move the largest
+#          disk to the destination, then move the n-1 disks onto it.
+
 import sys
-
-
-def hanoi(n, src, aux, dst, out):
-    if n == 1:
-        out.append(f"{src} {dst}")
-        return
-    hanoi(n - 1, src, dst, aux, out)
-    out.append(f"{src} {dst}")
-    hanoi(n - 1, aux, src, dst, out)
 
 
 def solve(it) -> str:
     n = ni(it)
     out = [str((1 << n) - 1)]
-    hanoi(n, 1, 2, 3, out)
+
+    def hanoi(disks: int, src: int, aux: int, dst: int) -> None:
+        if disks == 1:
+            out.append(f"{src} {dst}")
+            return
+
+        hanoi(disks - 1, src, dst, aux)
+        out.append(f"{src} {dst}")
+        hanoi(disks - 1, aux, src, dst)
+
+    hanoi(n, 1, 2, 3)
+
     return "\n".join(out)
 
 

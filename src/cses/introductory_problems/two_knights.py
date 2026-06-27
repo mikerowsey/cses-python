@@ -1,3 +1,11 @@
+# Pattern: Mathematical Formula
+# Technique: Combinatorial counting
+# Time: O(n)
+# Space: O(1)
+# Insight: Count all ways to place two knights, then subtract the pairs
+#          that attack each other. Each 2×3 or 3×2 rectangle contributes
+#          four attacking pairs.
+
 import sys
 
 

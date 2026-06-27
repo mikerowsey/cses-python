@@ -1,3 +1,11 @@
+# Pattern: Mathematical Formula
+# Technique: Factor counting
+# Time: O(log₅ n)
+# Space: O(1)
+# Insight: Each trailing zero comes from a factor of 10 = 2 × 5. Since
+#          factorials contain more 2s than 5s, count the number of factors
+#          of 5 by repeatedly dividing n by 5.
+
 import sys
 
 

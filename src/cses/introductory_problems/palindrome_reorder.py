@@ -1,3 +1,11 @@
+# Pattern: Constructive Algorithm
+# Technique: Frequency counting
+# Time: O(n)
+# Space: O(1)
+# Insight: A palindrome is possible only if at most one character has an
+#          odd frequency. Build one half from the character counts, place
+#          the odd character (if any) in the middle, then mirror the half.
+
 import sys
 
 

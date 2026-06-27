@@ -1,3 +1,11 @@
+# Pattern: Mathematical Observation
+# Technique: Constructive partitioning
+# Time: O(n)
+# Space: O(n)
+# Insight: Equal-sum subsets exist only when n mod 4 is 0 or 3. Use the
+#          repeating structure of groups of four to build the partition
+#          directly.
+
 import sys
 
 

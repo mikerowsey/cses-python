@@ -1,21 +1,26 @@
+# Pattern: Linear Scan
+# Technique: Run-length counting
+# Time: O(n)
+# Space: O(1)
+# Insight: Traverse the string once, counting consecutive identical
+#          characters. Reset the count when the character changes and
+#          track the maximum run length seen.
+
 import sys
 
 
 def solve(it) -> str:
     s = ns(it)
-    current = s[0]
-    n = 1
-    reps = 1
+    reps = best = 1
 
-    for next_val in s[1:]:
-        if next_val == current:
-            n += 1
-            reps = max(reps, n)
-            continue
-        n = 1
-        current = next_val
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:
+            reps += 1
+            best = max(best, reps)
+        else:
+            reps = 1
 
-    return str(reps)
+    return str(best)
 
 
 def ni(it) -> int:
