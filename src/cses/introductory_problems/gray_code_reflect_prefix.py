@@ -16,11 +16,9 @@ def solve(it) -> str:
     for i in range(1, n):
         b = []
         for e in a:
-            s = '0' + e
-            b.append(s)
+            b.append('0' + e)
         for e in reversed(a):
-            s = '1' + e
-            b.append(s)
+            b.append('1' + e)
         a = b
 
     return "\n".join(a)
