@@ -12,3 +12,6 @@ dependencies = [
 dev = [
     "line-profiler>=5.0.2",
 ]
+
+[tool.basedpyright]
+typeCheckingMode = "standard"
